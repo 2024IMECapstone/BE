@@ -24,9 +24,9 @@ public class MemberService {
     }
 
     private void validateDuplicateMember(Member member) {
-        memberRepository.findByNickname(member.getNickname())
+        memberRepository.findByUserid(member.getUserid())
                 .ifPresent(m -> {
-            throw new IllegalStateException("이미 존재하는 닉네임입니다.");
+            throw new IllegalStateException("이미 존재하는 이메일입니다.");
         });
     }
 
