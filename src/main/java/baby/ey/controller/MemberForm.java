@@ -1,13 +1,19 @@
 package baby.ey.controller;
 
 public class MemberForm {
-    private String nickname;
 
-    public String getNickname() {
-        return nickname;
+    public String getUserid() {
+        return userid;
     }
 
-    public void setNickname(String nickname) {
-        this.nickname = nickname;
+    public void setUserid(String userid) {
+        this.userid = userid;
     }
+
+    private String userid;
+
+
+
+
+
 }

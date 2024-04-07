@@ -18,7 +18,7 @@ public class MemoryMemberRepositoryTest {
     @Test
     public void save() {
         Member member = new Member();
-        member.setNickname("taro");
+        member.setUserid("taro");
 
         repository.save(member);
 
@@ -27,16 +27,16 @@ public class MemoryMemberRepositoryTest {
     }
 
     @Test
-    public void findByNickname() {
+    public void findByEmail() {
         Member member1 = new Member();
-        member1.setNickname("taro");
+        member1.setUserid("taro");
         repository.save(member1);
 
         Member member2 = new Member();
-        member2.setNickname("sungchan");
+        member2.setUserid("sungchan");
         repository.save(member2);
 
-        Member result = repository.findByNickname("taro").get();
+        Member result = repository.findByUserid("taro").get();
 
         assertThat(result).isEqualTo(member1);
     }
