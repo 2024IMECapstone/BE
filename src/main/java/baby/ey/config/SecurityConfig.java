@@ -1,5 +1,6 @@
 package baby.ey.config;
 
+import baby.ey.jwt.JwtAuthenticationFilter;
 import baby.ey.jwt.JwtTokenProvider;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
