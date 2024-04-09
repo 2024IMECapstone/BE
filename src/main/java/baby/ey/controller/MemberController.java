@@ -1,37 +1,37 @@
 package baby.ey.controller;
 
 import baby.ey.domain.Member;
+import baby.ey.dto.JwtTokenDTO;
+import baby.ey.dto.SignInDto;
 import baby.ey.service.MemberService;
+import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
-@Controller
+@RestController
+@RequiredArgsConstructor
+@RequestMapping("/members")
 public class MemberController {
 
     private final MemberService memberService;
+    private static final Logger log = LoggerFactory.getLogger(MemberController.class);
 
-    @Autowired
-    public MemberController(MemberService memberService) {
-        this.memberService = memberService;
+    @PostMapping("/sign-in")
+    public JwtTokenDTO signIn(@RequestBody SignInDto signInDto) {
+        String username = signInDto.getUsername();
+        String password = signInDto.getPassword();
+        JwtTokenDTO jwtToken = memberService.signIn(username, password);
+        log.info("request username = {}, password = {}", username, password);
+        log.info("jwtToken accessToken = {}, refreshToken = {}", jwtToken.getAccessToken(), jwtToken.getRefreshToken());
+        return jwtToken;
     }
 
-    // 회원가입
-    // 맵핑을 임의의 html로 해두었기에 수정 필요할듯?
-    @GetMapping("/members/new")
-    public String createForm() {
-        return "members/createMemberForm";
-    }
-
-    @PostMapping("/members/new")
-    public String create(MemberForm form) {
-        Member member = new Member();
-        member.setUserid(form.getUserid());
-
-        memberService.join(member);
-
-        return "redirect:/";
+    @PostMapping("/test")
+    public String test() {
+        return "success";
     }
 
 }
