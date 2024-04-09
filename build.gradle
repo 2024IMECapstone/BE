@@ -23,6 +23,7 @@ dependencies {
 	// implementation 'mysql:mysql-connector-java:8.0.36'
 	runtimeOnly 'com.mysql:mysql-connector-j'
 
+	//Spring Security
 	implementation 'org.springframework.boot:spring-boot-starter-security'
 
 	//JWT

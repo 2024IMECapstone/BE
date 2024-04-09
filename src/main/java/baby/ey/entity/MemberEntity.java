@@ -9,6 +9,9 @@ import lombok.AllArgsConstructor;
 @Getter
 @NoArgsConstructor
 @Entity
+
+
+
 @AllArgsConstructor
 public class MemberEntity {
     @Id
