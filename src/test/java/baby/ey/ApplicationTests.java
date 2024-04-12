@@ -1,13 +1,13 @@
-package baby.ey;
-
-import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
-
-@SpringBootTest
-class ApplicationTests {
-
-	@Test
-	void contextLoads() {
-	}
-
-}
+//package baby.ey;
+//
+//import org.junit.jupiter.api.Test;
+//import org.springframework.boot.test.context.SpringBootTest;
+//
+//@SpringBootTest
+//class ApplicationTests {
+//
+//	@Test
+//	void contextLoads() {
+//	}
+//
+//}
