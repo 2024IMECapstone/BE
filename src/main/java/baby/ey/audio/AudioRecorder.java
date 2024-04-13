@@ -12,7 +12,7 @@ public class AudioRecorder {
 
     private static final AudioFormat FORMAT = new AudioFormat(44100, 16, 1, true, true);
     private static final int BUFFER_SIZE = 4096;
-    private static final Duration RECORDING_DURATION = Duration.ofSeconds(7); // 녹음 시간 설정 (7초)
+    private static final Duration RECORDING_DURATION = Duration.ofSeconds(6); // 녹음 시간 설정 (6초)
 
     public void recordAudio(String fileName) {
         try {
@@ -29,17 +29,11 @@ public class AudioRecorder {
             // 녹음 시작 시간을 기록합니다.
             Instant startTime = Instant.now();
 
-            // 새로운 디렉토리 경로를 설정합니다.
-            String directoryPath = "C:\\Users\\smyj0\\audio_files";
-            File directory = new File(directoryPath);
-
-            // 디렉토리가 존재하지 않으면 생성합니다.
-            if (!directory.exists()) {
-                directory.mkdirs();
-            }
+            // 현재 실행 중인 Java 프로그램이 위치한 디렉토리를 가져옵니다.
+            String currentDirectory = System.getProperty("user.dir");
 
             // 파일 경로 설정
-            String filePath = directoryPath + File.separator + fileName;
+            String filePath = currentDirectory + File.separator + fileName;
 
             // 녹음 시간 동안 오디오를 읽어들입니다.
             byte[] buffer = new byte[BUFFER_SIZE];
