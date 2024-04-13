@@ -1,4 +1,4 @@
-package baby.ey.aduio;
+package baby.ey.audio;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.http.HttpStatus;

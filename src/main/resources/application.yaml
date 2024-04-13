@@ -1,25 +1,28 @@
-spring:
-  datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: ${SPRING_DATASOURCE_URL}
-    username: root
-    password: ${SPRING_DATASOURCE_PASSWORD}
+#spring:
+#  datasource:
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    url: ${SPRING_DATASOURCE_URL}
+#    username: root
+#    password: ${SPRING_DATASOURCE_PASSWORD}
 
-  thymeleaf:
-    cache: false
+#  thymeleaf:
+#    cache: false
 
 jwt:
   secret: 618323f8e1b44bf0ec23142d148acad6d57dc3f81c96fac2a17e9eec4b835c28
 
 
-jpa:
-  database: mysql
-  database-platform: org.hibernate.dialect.MySQLDialect
-  open-in-view: false
-  show-sql: true
-  hibernate:
-    ddl-auto: update
-  properties:
-    hibernate:
-      format_sql: true
+#jpa:
+#  database: mysql
+#  database-platform: org.hibernate.dialect.MySQLDialect
+#  open-in-view: false
+#  show-sql: true
+#  hibernate:
+#    ddl-auto: update
+#  properties:
+#    hibernate:
+#      format_sql: true
 
+audio:
+  file:
+    path: C:\Users\smyj0\audio_files\
