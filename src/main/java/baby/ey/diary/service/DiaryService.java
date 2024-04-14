@@ -18,7 +18,7 @@ public class DiaryService {
 
     @Transactional(readOnly = true)
     public List<DiaryResponseDto> getDiary() {
-        return diaryRepository.findAllByOrderByCreatedAtDesc().stream()
+        return diaryRepository.findAllByOrderByCreatedDesc().stream()
                 .map(DiaryResponseDto::new).toList();
     }
 

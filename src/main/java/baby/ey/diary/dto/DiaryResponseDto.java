@@ -5,7 +5,7 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Getter
 @NoArgsConstructor
@@ -13,15 +13,17 @@ public class DiaryResponseDto {
     private Long id;
     private Long baby_id;
     private String content;
-    private LocalDate createdAt;
-    private LocalDate modifiedAt;
+    private LocalDateTime created;
+    private LocalDateTime modified;
+
 
     @Builder
     public DiaryResponseDto(Diary entity) {
-        this.id = id;
-        this.baby_id = baby_id;
-        this.content = content;
-        this.createdAt = createdAt;
-        this.modifiedAt = modifiedAt;
+        this.id = entity.getId();
+        this.baby_id = entity.getBaby_id();
+        this.content = entity.getContent();
+        this.created = entity.getCreated();
+        this.modified = entity.getModified();
     }
+
 }
