@@ -1,5 +1,4 @@
-package baby.ey.diary.entity;
-
+package baby.ey.user.entity;
 
 import jakarta.persistence.EntityListeners;
 import jakarta.persistence.MappedSuperclass;
