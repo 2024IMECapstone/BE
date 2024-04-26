@@ -1,7 +1,6 @@
 package baby.ey.user.controller;
 
 
-import baby.ey.diary.dto.DiaryResponseDto;
 import baby.ey.user.dto.UserRequestsDto;
 import baby.ey.user.dto.UserResponseDto;
 import baby.ey.user.entity.User;
