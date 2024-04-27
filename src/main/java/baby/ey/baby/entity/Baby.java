@@ -19,7 +19,7 @@ public class Baby extends Timestamped {
     private Long id;
 
     @ManyToOne
-    @Column(nullable = false)
+    @JoinColumn(nullable = false)
     private User parent;
 
     @Column
