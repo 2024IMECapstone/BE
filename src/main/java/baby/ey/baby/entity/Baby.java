@@ -19,8 +19,8 @@ public class Baby extends Timestamped {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(nullable = false)
-    private User parent;
+    @JoinColumn(name = "baby_id", nullable = false)
+    private User user;
 
     @Column
     private String path;
@@ -42,7 +42,7 @@ public class Baby extends Timestamped {
 
     public Baby(BabyRequestsDto babyRequestsDto) {
         this.id = babyRequestsDto.getId();
-        this.parent = babyRequestsDto.getParent();
+        this.user = babyRequestsDto.getUser();
         this.path = babyRequestsDto.getPath();
         this.name = babyRequestsDto.getName();
         this.birthday = babyRequestsDto.getBirthday();
