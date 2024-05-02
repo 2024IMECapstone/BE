@@ -32,7 +32,7 @@ public class UserController {
 
     @GetMapping("/api/user/{email}")
     @Operation(summary = "이메일로 회원 조회", description = "아이디 찾기 API")
-    public UserResponseDto getDiary(@PathVariable String email) {
+    public UserResponseDto getUser(@PathVariable String email) {
         return userService.getUser(email);
     }
 }

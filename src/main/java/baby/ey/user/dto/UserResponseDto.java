@@ -1,5 +1,6 @@
 package baby.ey.user.dto;
 
+import baby.ey.baby.entity.Baby;
 import baby.ey.user.entity.User;
 import lombok.Builder;
 import lombok.Getter;
@@ -17,7 +18,6 @@ public class UserResponseDto {
     private String nickname;
     private Date birthday;
     private Integer relation;
-    private String baby_id;
     private LocalDateTime created;
     private LocalDateTime modified;
 
@@ -29,7 +29,6 @@ public class UserResponseDto {
         this.nickname = entity.getNickname();
         this.birthday = entity.getBirthday();
         this.relation = entity.getRelation();
-        this.baby_id = entity.getBaby_id();
         this.created = LocalDateTime.now();
         this.modified = LocalDateTime.now();
     }

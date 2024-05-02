@@ -8,6 +8,8 @@ import lombok.NoArgsConstructor;
 
 import java.sql.Date;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Getter
@@ -18,9 +20,11 @@ public class Baby extends Timestamped {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
-    @JoinColumn(name = "baby_id", nullable = false)
-    private User user;
+    @OneToMany(mappedBy = "baby")
+    private List<User> users = new ArrayList<>();
+
+    @Column(nullable = false, unique = true)
+    private String babyid;
 
     @Column
     private String path;
@@ -42,7 +46,8 @@ public class Baby extends Timestamped {
 
     public Baby(BabyRequestsDto babyRequestsDto) {
         this.id = babyRequestsDto.getId();
-        this.user = babyRequestsDto.getUser();
+        this.babyid = babyRequestsDto.getBabyid();
+        // this.user = babyRequestsDto.getUser();
         this.path = babyRequestsDto.getPath();
         this.name = babyRequestsDto.getName();
         this.birthday = babyRequestsDto.getBirthday();

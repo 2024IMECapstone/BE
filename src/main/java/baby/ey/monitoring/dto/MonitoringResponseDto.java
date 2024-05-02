@@ -1,6 +1,6 @@
-package baby.ey.diary.dto;
+package baby.ey.monitoring.dto;
 
-import baby.ey.diary.entity.Diary;
+import baby.ey.monitoring.entity.Monitoring;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -9,21 +9,15 @@ import java.time.LocalDateTime;
 
 @Getter
 @NoArgsConstructor
-public class DiaryResponseDto {
+public class MonitoringResponseDto {
     private Long id;
-    private Long baby_id;
     private String content;
     private LocalDateTime created;
-    private LocalDateTime modified;
-
 
     @Builder
-    public DiaryResponseDto(Diary entity) {
+    public MonitoringResponseDto(Monitoring entity) {
         this.id = entity.getId();
-        this.baby_id = entity.getBaby_id();
         this.content = entity.getContent();
         this.created = LocalDateTime.now();
-        this.modified = LocalDateTime.now();
     }
-
 }

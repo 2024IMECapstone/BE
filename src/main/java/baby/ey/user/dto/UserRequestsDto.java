@@ -1,5 +1,6 @@
 package baby.ey.user.dto;
 
+import baby.ey.baby.entity.Baby;
 import jakarta.persistence.Column;
 import lombok.Getter;
 
@@ -14,7 +15,7 @@ public class UserRequestsDto {
     private String nickname;
     private Date birthday;
     private Integer relation;
-    private String baby_id;
+    private String babyid;
     private LocalDateTime created;
     private LocalDateTime modified;
 }

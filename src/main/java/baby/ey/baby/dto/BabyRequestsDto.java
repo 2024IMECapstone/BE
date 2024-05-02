@@ -9,7 +9,8 @@ import java.time.LocalDateTime;
 @Getter
 public class BabyRequestsDto {
     private Long id;
-    private User user;
+    private String babyid;
+    //private User user;
     private String path;
     private String name;
     private Date birthday;

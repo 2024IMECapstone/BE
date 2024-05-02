@@ -14,7 +14,8 @@ import java.time.LocalDateTime;
 
 public class BabyResponseDto {
     private Long id;
-    private User user;
+    private String babyid;
+    // private User user;
     private String path;
     private String name;
     private Date birthday;
@@ -25,7 +26,8 @@ public class BabyResponseDto {
     @Builder
     public BabyResponseDto(Baby entity) {
         this.id = entity.getId();
-        this.user = entity.getUser();
+        this.babyid = entity.getBabyid();
+        // this.user = entity.getUser();
         this.path = entity.getPath();
         this.name = entity.getName();
         this.birthday = entity.getBirthday();

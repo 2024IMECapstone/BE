@@ -1,13 +1,17 @@
 package baby.ey.user.entity;
 
+import baby.ey.baby.entity.Baby;
 import baby.ey.user.dto.UserRequestsDto;
 import baby.ey.user.dto.UserResponseDto;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.sql.Date;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Getter
@@ -32,9 +36,10 @@ public class User extends Timestamped {
     @Column
     private Integer relation;
 
-    @Column
-    private String baby_id;
-    // FK 연결 예정
+    @Setter
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "babyid")
+    private Baby baby;
 
     @Column
     private LocalDateTime created;
@@ -49,10 +54,8 @@ public class User extends Timestamped {
         this.nickname = userRequestsDto.getNickname();
         this.birthday = userRequestsDto.getBirthday();
         this.relation = userRequestsDto.getRelation();
-        this.baby_id = userRequestsDto.getBaby_id();
         this.created = LocalDateTime.now();
         this.modified = LocalDateTime.now();
     }
-
 
 }
