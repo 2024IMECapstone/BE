@@ -13,6 +13,7 @@ public class DiaryResponseDto {
     private Long id;
     private Long baby_id;
     private String content;
+    private String path;
     private LocalDateTime created;
     private LocalDateTime modified;
 
@@ -22,6 +23,7 @@ public class DiaryResponseDto {
         this.id = entity.getId();
         this.baby_id = entity.getBaby_id();
         this.content = entity.getContent();
+        this.path = entity.getPath();
         this.created = LocalDateTime.now();
         this.modified = LocalDateTime.now();
     }

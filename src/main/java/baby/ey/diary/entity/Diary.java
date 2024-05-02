@@ -24,6 +24,9 @@ public class Diary extends Timestamped {
     private String content;
 
     @Column
+    private String path;
+
+    @Column
     private LocalDateTime created;
 
     @Column
@@ -35,12 +38,14 @@ public class Diary extends Timestamped {
         this.id = requestsDto.getId();
         this.baby_id = requestsDto.getBaby_id();
         this.content = requestsDto.getContent();
+        this.path = requestsDto.getPath();
         this.created = LocalDateTime.now();
         this.modified = LocalDateTime.now();
     }
 
     public void update(DiaryRequestsDto requestsDto) {
         this.content = requestsDto.getContent();
+        this.path = requestsDto.getPath();
         this.modified = LocalDateTime.now();
     }
 }
