@@ -4,14 +4,23 @@ spring:
     url: ${SPRING_DATASOURCE_URL}
     username: root
     password: ${SPRING_DATASOURCE_PASSWORD}
+  profiles:
+    include: jwt, aws
+  config:
+    import: application-aws.yml
 
   thymeleaf:
     cache: false
 
-
-jwt:
-  secret: 618323f8e1b44bf0ec23142d148acad6d57dc3f81c96fac2a17e9eec4b835c28
-
+cloud:
+  aws:
+    s3:
+      bucket: ${BUCKET}
+    stack.auto: false
+    region.static: ap-northeast-2
+    credentials:
+      access-key: ${ACCESS_KEY}
+      secret-key: ${SECRET_KEY}
 
 jpa:
   database: mysql
@@ -23,4 +32,5 @@ jpa:
   properties:
     hibernate:
       format_sql: true
+
 

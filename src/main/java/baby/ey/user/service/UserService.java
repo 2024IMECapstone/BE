@@ -1,8 +1,5 @@
 package baby.ey.user.service;
 
-import baby.ey.baby.entity.Baby;
-import baby.ey.baby.repository.BabyRepository;
-import baby.ey.diary.dto.DiaryResponseDto;
 import baby.ey.user.dto.UserRequestsDto;
 import baby.ey.user.dto.UserResponseDto;
 import baby.ey.user.entity.User;
@@ -17,7 +14,6 @@ import java.util.List;
 @RequiredArgsConstructor
 public class UserService {
     private final UserRepository userRepository;
-    private final BabyRepository babyRepository;
 
     @Transactional(readOnly = true)
     public List<UserResponseDto> getUser() {
@@ -28,10 +24,6 @@ public class UserService {
     @Transactional
     public UserResponseDto createUser(UserRequestsDto userRequestsDto) {
         User user = new User(userRequestsDto);
-        Baby baby = babyRepository.findByBabyid(userRequestsDto.getBabyid()).orElseThrow(
-                () -> new IllegalArgumentException("해당 아기 정보가 없습니다.")
-        );
-        user.setBaby(baby);
         userRepository.save(user);
         return new UserResponseDto(user);
     }

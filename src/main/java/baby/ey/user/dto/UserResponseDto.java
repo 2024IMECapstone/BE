@@ -18,6 +18,7 @@ public class UserResponseDto {
     private String nickname;
     private Date birthday;
     private Integer relation;
+    private String babyid;
     private LocalDateTime created;
     private LocalDateTime modified;
 
@@ -29,6 +30,7 @@ public class UserResponseDto {
         this.nickname = entity.getNickname();
         this.birthday = entity.getBirthday();
         this.relation = entity.getRelation();
+        this.babyid = entity.getBabyid();
         this.created = LocalDateTime.now();
         this.modified = LocalDateTime.now();
     }

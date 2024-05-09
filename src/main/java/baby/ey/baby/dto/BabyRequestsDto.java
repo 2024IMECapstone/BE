@@ -1,6 +1,5 @@
 package baby.ey.baby.dto;
 
-import baby.ey.user.entity.User;
 import lombok.Getter;
 
 import java.sql.Date;
@@ -10,7 +9,6 @@ import java.time.LocalDateTime;
 public class BabyRequestsDto {
     private Long id;
     private String babyid;
-    //private User user;
     private String path;
     private String name;
     private Date birthday;

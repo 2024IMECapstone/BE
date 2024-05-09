@@ -20,9 +20,6 @@ public class Baby extends Timestamped {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @OneToMany(mappedBy = "baby")
-    private List<User> users = new ArrayList<>();
-
     @Column(nullable = false, unique = true)
     private String babyid;
 
@@ -47,7 +44,6 @@ public class Baby extends Timestamped {
     public Baby(BabyRequestsDto babyRequestsDto) {
         this.id = babyRequestsDto.getId();
         this.babyid = babyRequestsDto.getBabyid();
-        // this.user = babyRequestsDto.getUser();
         this.path = babyRequestsDto.getPath();
         this.name = babyRequestsDto.getName();
         this.birthday = babyRequestsDto.getBirthday();
