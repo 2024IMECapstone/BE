@@ -23,8 +23,8 @@ public class DiaryResponseDto {
         this.baby_id = entity.getBaby_id();
         this.content = entity.getContent();
         this.path = entity.getPath();
-        this.created = LocalDateTime.now();
-        this.modified = LocalDateTime.now();
+        this.created = entity.getCreated();
+        this.modified = entity.getModified();
     }
 
 }

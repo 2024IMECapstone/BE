@@ -33,8 +33,8 @@ public class UserResponseDto {
         this.relation = entity.getRelation();
         this.babyid = entity.getBabyid();
         this.path = entity.getPath();
-        this.created = LocalDateTime.now();
-        this.modified = LocalDateTime.now();
+        this.created = entity.getCreated();
+        this.modified = entity.getModified();
     }
 
 }
