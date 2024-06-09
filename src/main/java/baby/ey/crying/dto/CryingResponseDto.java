@@ -18,6 +18,6 @@ public class CryingResponseDto {
     public CryingResponseDto(Crying entity) {
         this.id = entity.getId();
         this.content = entity.getContent();
-        this.created = LocalDateTime.now();
+        this.created = entity.getCreated();
     }
 }

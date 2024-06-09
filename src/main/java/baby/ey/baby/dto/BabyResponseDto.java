@@ -29,7 +29,7 @@ public class BabyResponseDto {
         this.name = entity.getName();
         this.birthday = entity.getBirthday();
         this.gender = entity.getGender();
-        this.created = LocalDateTime.now();
-        this.modified = LocalDateTime.now();
+        this.created = entity.getCreated();
+        this.modified = entity.getModified();
     }
 }

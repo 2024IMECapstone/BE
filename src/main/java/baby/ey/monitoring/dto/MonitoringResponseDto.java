@@ -18,6 +18,6 @@ public class MonitoringResponseDto {
     public MonitoringResponseDto(Monitoring entity) {
         this.id = entity.getId();
         this.content = entity.getContent();
-        this.created = LocalDateTime.now();
+        this.created = entity.getCreated();
     }
 }

@@ -41,10 +41,18 @@ public class DiaryController {
         return diaryService.getDiary();
     }
 
+    /*
     @PostMapping("/api/post")
     @Operation(summary = "육아일기 작성", description = "육아일기 작성 API")
     public DiaryResponseDto createDiary(@RequestPart(value = "image", required = false) MultipartFile image, @Valid @RequestPart(value = "requestDto") DiaryRequestsDto requestDto) throws IOException {
         return diaryService.createDiary(image, requestDto);
+    }
+     */
+
+    @PostMapping("/api/post")
+    @Operation(summary = "육아일기 작성", description = "육아일기 작성 API")
+    public DiaryResponseDto createDiary(@RequestBody DiaryRequestsDto requestDto) {
+        return diaryService.createDiary(requestDto);
     }
 
     @GetMapping("/api/diary/{id}")
@@ -53,10 +61,19 @@ public class DiaryController {
         return diaryService.getDiary(id);
     }
 
+    /*
     @PutMapping("/api/diary/{id}")
     @Operation(summary = "육아일기 수정", description = "육아일기 내용 및 이미지 변경 API, 변경 날짜 자동 저장")
     public DiaryResponseDto updateDiary(@PathVariable Long id, @RequestPart(value = "image", required = false) MultipartFile image, @Valid @RequestPart(value = "requestDto") DiaryRequestsDto requestDto) throws Exception {
         return diaryService.updateDiary(id, image, requestDto);
+    }
+
+     */
+
+    @PutMapping("/api/diary/{id}")
+    @Operation(summary = "육아일기 수정", description = "육아일기 내용 및 이미지 변경 API, 변경 날짜 자동 저장")
+    public DiaryResponseDto updateDiary(@PathVariable Long id, @RequestBody DiaryRequestsDto requestDto) throws Exception {
+        return diaryService.updateDiary(id, requestDto);
     }
 
 
