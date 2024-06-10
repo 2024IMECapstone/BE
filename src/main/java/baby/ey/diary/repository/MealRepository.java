@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-public interface MealRepository extends JpaRepository<Meal, Integer> {
+public interface MealRepository extends JpaRepository<Meal, Long> {
     List<Meal> findAllByOrderByCreatedDesc();
     Optional<Meal> findTopByOrderByCreatedDesc();
 }

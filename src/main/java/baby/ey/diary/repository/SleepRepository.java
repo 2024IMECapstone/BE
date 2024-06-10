@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-public interface SleepRepository extends JpaRepository<Sleep, Integer> {
+public interface SleepRepository extends JpaRepository<Sleep, Long> {
     List<Sleep> findAllByOrderByCreatedDesc();
     Optional<Sleep> findTopByOrderByCreatedDesc();
 }

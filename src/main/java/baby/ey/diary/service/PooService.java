@@ -1,5 +1,6 @@
 package baby.ey.diary.service;
 
+import baby.ey.diary.dto.GrowthResponseDto;
 import baby.ey.diary.dto.PooResponseDto;
 import baby.ey.diary.repository.PooRepository;
 import lombok.RequiredArgsConstructor;
@@ -19,4 +20,10 @@ public class PooService {
                 .map(PooResponseDto::new).toList();
     }
 
+    @Transactional
+    public PooResponseDto getPoo(Long id) {
+        return pooRepository.findById(id).map(PooResponseDto::new).orElseThrow(
+                () -> new IllegalArgumentException("해당 일기가 없습니다")
+        );
+    }
 }

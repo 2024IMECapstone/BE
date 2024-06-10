@@ -20,4 +20,11 @@ public class GrowthService {
         return growthRepository.findAllByOrderByCreatedDesc().stream()
                 .map(GrowthResponseDto::new).toList();
     }
+
+    @Transactional
+    public GrowthResponseDto getGrowth(Long id) {
+        return growthRepository.findById(id).map(GrowthResponseDto::new).orElseThrow(
+                () -> new IllegalArgumentException("해당 일기가 없습니다")
+        );
+    }
 }

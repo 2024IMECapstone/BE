@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-public interface PooRepository extends JpaRepository<Poo, Integer> {
+public interface PooRepository extends JpaRepository<Poo, Long> {
     List<Poo> findAllByOrderByCreatedDesc();
     Optional<Poo> findTopByOrderByCreatedDesc();
 }

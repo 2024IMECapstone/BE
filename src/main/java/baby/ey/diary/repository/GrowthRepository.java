@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-public interface GrowthRepository extends JpaRepository<Growth, Integer> {
+public interface GrowthRepository extends JpaRepository<Growth, Long> {
     List<Growth> findAllByOrderByCreatedDesc();
 }
 
